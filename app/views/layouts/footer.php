@@ -74,26 +74,26 @@
                 <div class="social-links">
 
                     <!-- Facebook -->
-                    <a href="https://www.facebook.com/" class="text-white me-3" target="_blank"
+                    <a href="https://www.facebook.com/" class="text-white me-3 text-decoration-none" target="_blank"
                         rel="noopener noreferrer" aria-label="Facebook">
                         <i class="fab fa-facebook"></i>
                     </a>
 
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/" class="text-white me-3" target="_blank"
+                    <a href="https://www.instagram.com/" class="text-white me-3 text-decoration-none" target="_blank"
                         rel="noopener noreferrer" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
 
-                    <!-- Twitter / X -->
-                    <a href="https://x.com/" class="text-white me-3" target="_blank" rel="noopener noreferrer"
-                        aria-label="X">
+                    <!-- X / Twitter -->
+                    <a href="https://x.com/" class="text-white me-3 text-decoration-none" target="_blank"
+                        rel="noopener noreferrer" aria-label="X">
                         <i class="fab fa-twitter"></i>
                     </a>
 
                     <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/" class="text-white" target="_blank" rel="noopener noreferrer"
-                        aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/" class="text-white text-decoration-none" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
 

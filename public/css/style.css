@@ -1,0 +1,141 @@
+/* ============================================
+   GENERAL
+   ============================================ */
+
+body {
+    background: #ffffff;
+}
+
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+    background-color: #1a237e !important;
+}
+
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+    min-height: 80vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+        ),
+        url("../assets/images/bghal.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+}
+
+
+/* ============================================
+   SECTION
+   ============================================ */
+
+.section-padding {
+    padding: 80px 0;
+}
+
+
+/* ============================================
+   ABOUT
+   ============================================ */
+
+.about-img {
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ============================================
+   PRODUCT CARD
+   ============================================ */
+
+.product-card {
+    transition: transform 0.3s;
+
+    border: none;
+
+    box-shadow:
+        0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+
+/* ============================================
+   CONTACT
+   ============================================ */
+
+.contact-info {
+    background-color: #f8f9fa;
+
+    padding: 30px;
+
+    border-radius: 10px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    border-radius: 5px;
+
+    background-color: white;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background-color: #1a237e;
+
+    color: white;
+
+    padding: 40px 0;
+}
+
+
+/* ============================================
+   SECTION ANIMATION
+   ============================================ */
+
+.section-animation {
+    opacity: 0;
+
+    transform: translateX(-50px);
+
+    transition:
+        opacity 0.8s ease-out,
+        transform 0.8s ease-out;
+}
+
+.section-animation.active {
+    opacity: 1;
+
+    transform: translateX(0);
+}

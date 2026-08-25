@@ -219,6 +219,185 @@ switch ($route) {
 
     /*
     |--------------------------------------------------------------------------
+    | AI CHAT ASSISTANT
+    |--------------------------------------------------------------------------
+    */
+
+    case 'chat/init':
+    case 'chat/session':
+        require_once __DIR__ . '/../app/controllers/ChatController.php';
+
+        $controller = new ChatController();
+        $controller->initSession();
+        break;
+
+    case 'chat/send':
+        require_once __DIR__ . '/../app/controllers/ChatController.php';
+
+        $controller = new ChatController();
+        $controller->send();
+        break;
+
+    case 'chat/history':
+        require_once __DIR__ . '/../app/controllers/ChatController.php';
+
+        $controller = new ChatController();
+        $controller->history();
+        break;
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | INQUIRIES & PERMINTAAN PENAWARAN (PUBLIC)
+    |--------------------------------------------------------------------------
+    */
+
+    case 'inquiry/store':
+    case 'inquiries/store':
+        require_once __DIR__ . '/../app/controllers/InquiryController.php';
+
+        $controller = new InquiryController();
+        $controller->store();
+        break;
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | ADMIN INQUIRIES & PENAWARAN
+    |--------------------------------------------------------------------------
+    */
+
+    case 'admin/inquiries':
+        require_once __DIR__ . '/../app/controllers/InquiryController.php';
+
+        $controller = new InquiryController();
+        $controller->adminIndex();
+        break;
+
+    case 'admin/inquiries/show':
+        require_once __DIR__ . '/../app/controllers/InquiryController.php';
+
+        $controller = new InquiryController();
+
+        $id = (int) ($_GET['id'] ?? 0);
+
+        $controller->adminShow($id);
+        break;
+
+    case 'admin/inquiries/update':
+        require_once __DIR__ . '/../app/controllers/InquiryController.php';
+
+        $controller = new InquiryController();
+
+        $id = (int) ($_GET['id'] ?? 0);
+
+        $controller->adminUpdate($id);
+        break;
+
+    case 'admin/inquiries/delete':
+        require_once __DIR__ . '/../app/controllers/InquiryController.php';
+
+        $controller = new InquiryController();
+
+        $id = (int) ($_GET['id'] ?? 0);
+
+        $controller->adminDelete($id);
+        break;
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | ADMIN AI CHAT LOGS
+    |--------------------------------------------------------------------------
+    */
+
+    case 'admin/chat':
+        require_once __DIR__ . '/../app/controllers/ChatController.php';
+
+        $controller = new ChatController();
+        $controller->adminIndex();
+        break;
+
+    case 'admin/chat/show':
+        require_once __DIR__ . '/../app/controllers/ChatController.php';
+
+        $controller = new ChatController();
+
+        $id = (int) ($_GET['id'] ?? 0);
+
+        $controller->adminShow($id);
+        break;
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | CUSTOMER AUTHENTICATION & GOOGLE LOGIN
+    |--------------------------------------------------------------------------
+    */
+
+    case 'auth/login':
+    case 'login':
+        require_once __DIR__ . '/../app/controllers/AuthController.php';
+
+        $controller = new AuthController();
+        $controller->login();
+        break;
+
+    case 'auth/google':
+        require_once __DIR__ . '/../app/controllers/AuthController.php';
+
+        $controller = new AuthController();
+        $controller->googleRedirect();
+        break;
+
+    case 'auth/google/callback':
+        require_once __DIR__ . '/../app/controllers/AuthController.php';
+
+        $controller = new AuthController();
+        $controller->googleCallback();
+        break;
+
+    case 'auth/logout':
+    case 'logout':
+        require_once __DIR__ . '/../app/controllers/AuthController.php';
+
+        $controller = new AuthController();
+        $controller->logout();
+        break;
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | CUSTOMER ACCOUNT & INQUIRY TRACKING
+    |--------------------------------------------------------------------------
+    */
+
+    case 'account':
+    case 'account/profile':
+        require_once __DIR__ . '/../app/controllers/AccountController.php';
+
+        $controller = new AccountController();
+        $controller->index();
+        break;
+
+    case 'account/inquiry':
+    case 'account/inquiries/show':
+        require_once __DIR__ . '/../app/controllers/AccountController.php';
+
+        $controller = new AccountController();
+        $controller->inquiryDetail();
+        break;
+
+    case 'account/update-profile':
+        require_once __DIR__ . '/../app/controllers/AccountController.php';
+
+        $controller = new AccountController();
+        $controller->updateProfile();
+        break;
+
+
+    /*
+    |--------------------------------------------------------------------------
     | 404
     |--------------------------------------------------------------------------
     */

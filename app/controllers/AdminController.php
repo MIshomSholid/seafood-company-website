@@ -69,8 +69,23 @@ class AdminController
             exit;
         }
 
+        require_once __DIR__ . '/../models/Inquiry.php';
+        require_once __DIR__ . '/../models/Product.php';
+        require_once __DIR__ . '/../models/ChatConversation.php';
+
+        $inquiryModel = new Inquiry();
+        $productModel = new Product();
+        $chatModel = new ChatConversation();
+
+        $inquiryStats = $inquiryModel->getStats();
+        $recentInquiries = $inquiryModel->getAll(null, null, null, 5);
+        $products = $productModel->getAll();
+        $productCount = count($products);
+        $chatCount = $chatModel->getCount();
+
         require_once __DIR__ . '/../views/admin/dashboard.php';
     }
+
 
 
     /**
